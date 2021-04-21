@@ -64,15 +64,6 @@ public class LoginSteps {
 
 	}
 
-	@And("clicks on forgotten password")
-	public void clicks_on_orgotten_password() throws InterruptedException{
-
-		login.clickSignIn();
-
-		Thread.sleep(10000);
-
-	}
-
 	@Then("user is navigated to the home page")
 	public void user_is_navigated_to_the_home_page(){
 
@@ -82,6 +73,13 @@ public class LoginSteps {
 
 		home.pageSourceEnd();
 
+	}
+	
+	@And("clicks on forgotten password")
+	public void clicks_on_forgotten_password() throws InterruptedException {
+		login = new LoginPage_PF(driver);
+		login.clickForgotPass();
+		Thread.sleep(10000);
 	}
 
 	@Then("user is navigated to the reset access page")
